@@ -4,31 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon Ellershaw - AI Researcher</title>
-  <!-- Font Awesome for icons -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Simple Reset */
+    :root {
+      --primary: #3B82F6;
+      --secondary: #111827;
+      --bg: #F9FAFB;
+      --text: #374151;
+      --card-bg: #ffffff;
+      --radius: 12px;
+      --transition: 0.3s ease;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-    header { position: fixed; top: 0; width: 100%; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); z-index: 100; }
-    nav { display: flex; justify-content: center; padding: 1rem; }
-    nav a { margin: 0 1rem; text-decoration: none; color: #333; font-weight: bold; }
-    nav a:hover, nav a.active { color: #0066cc; }
-    main { padding-top: 80px; }
-    section { padding: 4rem 1rem; max-width: 800px; margin: auto; }
-    #bio img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
-    .social a { margin-right: 1rem; font-size: 1.5rem; color: #333; }
-    .social a:hover { color: #0066cc; }
-    .project, .presentation { margin-bottom: 2rem; }
-    .project h3, .presentation h3 { margin-bottom: 0.5rem; }
-    footer { text-align: center; padding: 2rem 0; background: #f9f9f9; margin-top: 2rem; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 100; }
+    nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; }
+    nav a { text-decoration: none; color: var(--secondary); font-weight: 600; padding: 0.5rem 1rem; border-radius: var(--radius); transition: var(--transition); }
+    nav a:hover, nav a.active { background: var(--primary); color: #fff; }
+    main { padding-top: 100px; }
+    section { padding: 4rem 1rem; max-width: 1000px; margin: auto; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    section.visible { opacity: 1; transform: translateY(0); }
+    h1, h2 { color: var(--secondary); margin-bottom: 1rem; }
+    #bio { text-align: center; }
+    #bio img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; }
+    #bio p { margin-bottom: 0.75rem; }
+    .social a { margin: 0 0.5rem; font-size: 1.5rem; color: var(--secondary); transition: var(--transition); }
+    .social a:hover { color: var(--primary); }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .card { background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.5s var(--transition), box-shadow var(--transition); }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+    .card h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+    .card p a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    .card p a:hover { text-decoration: underline; }
+    #cv iframe { width: 100%; height: 600px; border: none; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: var(--text); }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="#bio">Bio</a>
+      <a href="#bio" class="active">Bio</a>
       <a href="#projects">Projects</a>
       <a href="#presentations">Presentations</a>
       <a href="#cv">CV</a>
@@ -51,48 +70,42 @@
     <!-- Projects Section -->
     <section id="projects">
       <h2>Projects</h2>
-
-      <div class="project">
-        <h3>Automated Discharge Summaries (AAAI 2024)</h3>
-        <p><a href="https://arxiv.org/abs/2305.13395" target="_blank">Paper</a> | <a href="#">Code</a></p>
+      <div class="cards">
+        <div class="card">
+          <h3>Automated Discharge Summaries (AAAI 2024)</h3>
+          <p><a href="https://arxiv.org/abs/2305.13395" target="_blank">Paper</a> | <a href="#">Code</a> | <a href="#">Press</a></p>
+        </div>
+        <div class="card">
+          <h3>BioDEX: Adverse Drug Event Extraction (EMNLP 2023)</h3>
+          <p><a href="#" target="_blank">Paper</a> | <a href="#" target="_blank">Repo</a></p>
+        </div>
+        <div class="card">
+          <h3>3D Infant Pose Estimation (NeurIPS Workshop 2020)</h3>
+          <p><a href="https://github.com/simonEllershaw/3DInfantPoseEstimation" target="_blank">Code</a> | <a href="https://infantmotion.github.io/" target="_blank">Website</a></p>
+        </div>
       </div>
-
-      <div class="project">
-        <h3>BioDEX: Adverse Drug Event Extraction (EMNLP 2023)</h3>
-        <p><a href="#" target="_blank">Paper</a></p>
-      </div>
-
-      <div class="project">
-        <h3>3D Infant Pose Estimation (NeurIPS Workshop 2020)</h3>
-        <p><a href="https://github.com/simonEllershaw/3DInfantPoseEstimation" target="_blank">Code</a> | <a href="https://infantmotion.github.io/" target="_blank">Website</a></p>
-      </div>
-
-      <!-- Add more projects as needed -->
     </section>
 
     <!-- Presentations Section -->
     <section id="presentations">
       <h2>Presentations</h2>
-
-      <div class="presentation">
-        <h3>Grounding LLMs with Clinical Knowledge</h3>
-        <p><a href="#" target="_blank">Poster (Healtac 2023)</a></p>
+      <div class="cards">
+        <div class="card">
+          <h3>Grounding LLMs with Clinical Knowledge</h3>
+          <p><a href="#" target="_blank">Poster (Healtac 2023)</a></p>
+        </div>
+        <div class="card">
+          <h3>Diagnosing Diabetic Retinopathy with Vision Transformers</h3>
+          <p><a href="https://github.com/simonEllershaw/Diabetic_Retinopathy_Vision_Transformer/blob/master/Poster.pdf" target="_blank">Poster (UCL Symposium 2021)</a></p>
+        </div>
       </div>
-
-      <div class="presentation">
-        <h3>Diagnosing Diabetic Retinopathy with Vision Transformers</h3>
-        <p><a href="https://github.com/simonEllershaw/Diabetic_Retinopathy_Vision_Transformer/blob/master/Poster.pdf" target="_blank">Poster (UCL Symposium 2021)</a></p>
-      </div>
-
-      <!-- Add more presentations as needed -->
     </section>
 
     <!-- CV Section -->
     <section id="cv">
       <h2>Curriculum Vitae</h2>
-      <!-- Embed the PDF or provide a download link -->
-      <p><a href="Simon_Ellershaw_CV.pdf" target="_blank">Download my CV (PDF)</a></p>
-      <iframe src="Simon_Ellershaw_CV.pdf" width="100%" height="600px" style="border:1px solid #ccc;"></iframe>
+      <p><a href="Simon_Ellershaw_CV.pdf" target="_blank" style="color: var(--primary); font-weight: 600;">Download my CV (PDF)</a></p>
+      <iframe src="Simon_Ellershaw_CV.pdf"></iframe>
     </section>
   </main>
 
@@ -101,25 +114,33 @@
   </footer>
 
   <script>
-    // Highlight active nav link on scroll
+    // Intersection Observer for fade-in sections
     const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav a');
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    sections.forEach(sec => observer.observe(sec));
 
+    // Active nav highlighting
+    const navLinks = document.querySelectorAll('nav a');
     window.addEventListener('scroll', () => {
       let current = '';
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
+        const top = section.offsetTop - 120;
+        if (pageYOffset >= top) current = section.getAttribute('id');
       });
       navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
       });
     });
   </script>
 </body>
 </html>
+<!-- End of HTML Document -->
