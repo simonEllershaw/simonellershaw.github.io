@@ -47,9 +47,9 @@
         .project .links a { display: inline-block; margin-right: 1rem; text-decoration: none; font-weight: 500; color: var(--primary); }
         .project .links a:hover { text-decoration: underline; }
 
-        /* Presentations */
-        #presentations .card { background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
-        #presentations h3 { margin-bottom: 0.5rem; }
+        /* Teaching */
+        #teaching .card { background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+        #teaching h3 { margin-bottom: 0.5rem; }
 
         /* CV */
         #cv iframe { width: 100%; height: 600px; border: none; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
@@ -61,7 +61,7 @@
         <nav>
             <a href="#bio" class="active">Bio</a>
             <a href="#projects">Recent Projects</a>
-            <a href="#presentations">Presentations</a>
+            <a href="#teaching">Teaching</a>
             <a href="#cv">CV</a>
         </nav>
     </header>
@@ -77,8 +77,8 @@
                 <a href="https://scholar.google.co.uk/citations?user=pqc4u3IAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
                 <a href="https://github.com/simonEllershaw" target="_blank"><i class="fab fa-github"></i></a>
             </div>
-            <p>Hello 👋 I'm a final-year PhD candidate in AI-Enabled Healthcare at University College London, funded by the UKRI Centre for Doctoral Training. I hold an MSc in Computer Science from Imperial College London and a BSc in Natural Sciences from Durham University.</p> 
-            <p>I also work as an NLP Engineer at Parexel AI Labs, following a year-long internship with their San Francisco team.</p>
+            <p>Hello 👋 I'm a final-year PhD candidate at the UKRI Centre for Doctoral Training for AI-Enabled Healthcare at University College London. I am also based at the Alan Turing Institute, the UK's National Institute for Data Science and Artificial Intelligence. I hold an MSc in Computer Science from Imperial College London and a BSc in Natural Sciences from Durham University.</p> 
+            <p>I have also worked for the last 4+ years in industry, as an NLP Engineer at Parexel AI Labs, following a year-long internship in San Francisco.</p>
             <p>My current research explores the application of large language models to clinical data, with a projects focusing on:</p>
             <ul style="list-style: none; padding: 0; text-align: center;">
                 <li style="margin-bottom: 0.5rem;">📝 Inference: Automated generation of discharge summaries</li>
@@ -93,8 +93,12 @@
 
             <div class="project">
                 <h3>Foresight</h3>
-                <p class="summary">Led the training and evaluation of Foresight, the world's first national AI healthcare model, a generative auto-regressive transformer model trained from scratch on 50+ million de-identified coded NHS England patient records. A general-purpose medical event prediction model, Foresight supports zero-shot predictions across a broad spectrum of medical events, including COVID-19, enabling scalable, data-driven clinical insights.</p>
+                <p class="summary">The UK's first national AI healthcare model, a generative auto-regressive transformer model trained from scratch on 50+ million de-identified coded NHS England patient records. As a general-purpose medical event prediction model, Foresight supports zero-shot predictions across a broad spectrum of medical events, including COVID-19, enabling scalable, data-driven clinical insights.</p>
                 <div class="links">
+                    <h4>Teaching</h4>
+                    <p>UK Generative AI Hub Launch: <a href="pdfs/foresight/GenAIPoster.pdf" target="_blank">Poster</a>
+                    <p>3 minute thesis (Departmental Prize)<a href="pdfs/foresight/3_minute_thesis.pdf" target="_blank">Poster</a></p>
+
                     <h4>Press</h4>
                     <a href="https://www.nature.com/articles/d41586-025-01422-3" target="_blank">Nature</a>
                     <a href="https://www.bbc.co.uk/sounds/play/m002bt8r" target="_blank">BBC Radio</a>
@@ -115,8 +119,16 @@
                 <h3>Automated Discharge Summaries</h3>
                 <p class="summary">Developing a system to automate discharge summaries using large language models guided by clinical guidelines. Completed a proof of concept using publicly available data, and currently conducting a retrospective study within a UCLH.</p>
                 <div class="links">
-                    <h4>Paper</h4><a href="https://openreview.net/pdf?id=1kDJJPppRG" target="_blank">AAAI 2024 Spring Symposium Series Clinical FMs</a>
-                    <h4>Resources</h4><a href="https://github.com/simonEllershaw/llm-discharge-summaries" target="_blank">GitHub Repository</a>
+                    <h4>Publications</h4>
+                    <p>AAAI 2024 Spring Symposium Series Clinical FMs: 
+                        <a href="https://arxiv.org/abs/2305.13395" target="_blank">Extended Abstract</a>
+                        <a href="pdfs/discharge_summaries/AAAI_2024_Spring_Symposium_Poster.pdf" target="_blank">Poster</a>
+                    </p>
+                    <h4>Teaching</h4>
+                    <p>Healtac 2024: <a href="pdfs/discharge_summaries/Simon_Ellershaw_Discharge_Summaries_Healtac.pdf" target="_blank">Slides</a>
+                    <p>Manchester University /UCL MSC Health Informatics Guest Lecture: <a href="pdfs/discharge_summaries/Discharge_Summaries_Manchester_2025.pdf" target="_blank">Slides</a>   
+                    </p>
+                    <h4>Resources</h4><a href="https://github.com/simonEllershaw/llm-discharge-summaries/" target="_blank">GitHub Repository</a>
                 </div>
             </div>
 
@@ -124,8 +136,10 @@
                 <h3>BioDEX: Adverse Drug Event Extraction</h3>
                 <p class="summary">BioDEX is a large-scale dataset designed to enhance automated extraction of Adverse Drug Events (ADE) from biomedical literature using NLP, supporting more efficient pharmacovigilance. Benchmarking against human performance reveals both the challenges and promise of AI-assisted drug safety monitoring. A collaboration between Parexel AI Labs and Stanford University.</p>
                 <div class="links">
-                    <h4>Paper</h4><a href="https://arxiv.org/abs/2305.13395" target="_blank">EMNLP 2023</a>
-                    <h4>Resources</h4><a href="https://github.com/KarelDO/BioDEX" target="_blank">GitHub Repository</a>
+                    <h4>Publications</h4>
+                    <p>EMNLP 2023: <a href="https://arxiv.org/abs/2305.13395" target="_blank">Paper</a></p>
+                    <h4>Resources</h4>
+                    <a href="https://github.com/KarelDO/BioDEX" target="_blank">GitHub Repository</a>
                 </div>
             </div>
 
@@ -134,8 +148,13 @@
                 <p class="summary">This work introduces a transfer learning framework for estimating 3D infant poses from video using shape template transformations, addressing challenges in pediatric motion analysis. The method achieved state-of-the-art performance on benchmark datasets and offers potential for non-invasive infant monitoring.</p>
                 <div class="links">
                     <h4>Publications</h4>
-                    <a href="https://nips.cc/virtual/2020/20630" target="_blank">Medical Imaging Meets NeurIPS</a>
-                    <a href="https://openaccess.thecvf.com/content/CVPR2021/html/Schmidtke_Unsupervised_Human_Pose_Estimation_Through_Transforming_Shape_Templates_CVPR_2021_paper.html" target="_blank">CVPR</a>
+                    <p>Medical Imaging Meets NeurIPS 2020:
+                        <a href="https://nips.cc/virtual/2020/20630" target="_blank">Abstract</a>
+                        <a href="https://www.youtube.com/watch?v=edN4z7h-9Gc" target="_blank">Recorded Presentation</a>
+                    </p>
+                    <p>CVPR 2021:
+                        <a href="https://openaccess.thecvf.com/content/CVPR2021/html/Schmidtke_Unsupervised_Human_Pose_Estimation_Through_Transforming_Shape_Templates_CVPR_2021_paper.html" target="_blank">Paper</a>
+                    </p>                    
                     <h4>Resources</h4>
                     <a href="https://github.com/simonEllershaw/3DInfantPoseEstimation" target="_blank">GitHub Repository</a>
                     <a href="https://infantmotion.github.io/" target="_blank">Project Site</a>
@@ -148,28 +167,27 @@
                 <div class="links">
                     <h4>Resources</h4>
                     <p><a href="https://github.com/simonEllershaw/Diabetic_Retinopathy_Vision_Transformer/blob/master/Poster.pdf" target="_blank">UCL Symposium Poster</a></p>
-                    <a href="https://github.com/simonEllershaw/Diabetic_Retinopathy_Vision_Transformer" target="_blank">GitHub Repository</a>
-                    <a href="https://infantmotion.github.io/" target="_blank">Project Site</a>
-                    
+                    <a href="https://github.com/simonEllershaw/Diabetic_Retinopathy_Vision_Transformer" target="_blank">GitHub Repository</a>                    
                 </div>
             </div>
 
         </section>
 
-        <!-- Presentations Section -->
-        <section id="presentations">
-            <h2>Presentations</h2>
+        <!-- Teaching Section -->
+        <section id="teaching">
+            <h2>Teaching</h2>
+
             <div class="card">
-                <h3>Intro to Large Language Models (for 1st year medical students)
-                <p><a href="presentations/MedicSSC.pdf" target="_blank">Presentation</a></p>
+                <h3>Artificial Intelligence in Healthcare SSC (1st Year UCL Medical Students)</h3>
+                <p>Introduction to Large Language Models <a href="pdfs/MedicSSC.pdf" target="_blank">Slides</a></p>
             </div>
         </section>
 
         <!-- CV Section -->
         <section id="cv">
             <h2>Curriculum Vitae</h2>
-            <p><a href="Simon_Ellershaw_CV.pdf" target="_blank" style="color: var(--primary); font-weight: 600;">Download my CV (PDF)</a></p>
-            <iframe src="Simon_Ellershaw_CV.pdf"></iframe>
+            <p><a href="pdfs/Simon_Ellershaw_CV.pdf" target="_blank" style="color: var(--primary); font-weight: 600;">Download my CV (PDF)</a></p>
+            <iframe src="pdfs/Simon_Ellershaw_CV.pdf"></iframe>
         </section>
     </main>
 
