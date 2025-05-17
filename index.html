@@ -12,48 +12,207 @@
         :root {
             --primary: #3B82F6;
             --secondary: #111827;
-            --bg: #F9FAFB;
+            --bg: linear-gradient(135deg, #f0f4ff 0%, #f9fafb 100%);
             --text: #374151;
-            --card-bg: #ffffff;
-            --radius: 12px;
-            --transition: 0.3s ease;
+            --card-bg: #fff;
+            --radius: 16px;
+            --transition: 0.3s cubic-bezier(.4,0,.2,1);
+            --shadow: 0 6px 24px rgba(60, 80, 180, 0.08), 0 1.5px 4px rgba(0,0,0,0.04);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 100; }
-        nav { display: flex; justify-content: center; gap: 2rem; padding: 1rem 0; }
-        nav a { text-decoration: none; color: var(--secondary); font-weight: 600; padding: 0.5rem 1rem; border-radius: var(--radius); transition: var(--transition); }
-        nav a:hover, nav a.active { background: var(--primary); color: #fff; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(59,130,246,0.07);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            letter-spacing: 0.02em;
+        }
+        nav a:hover, nav a.active {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+        }
 
-        main { padding-top: 100px; }
-        section { padding: 1rem 1rem; max-width: 1000px; margin: auto; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        section.visible { opacity: 1; transform: translateY(0); }
-        h1, h2 { color: var(--secondary); margin-bottom: 1rem; }
+        main { padding-top: 0px; }
+        section {
+            padding: 2.5rem 1.5rem;
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s var(--transition), transform 0.6s var(--transition);
+            scroll-margin-top: 120px; /* Adjust to match your header height */
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2 {
+            color: var(--secondary);
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+        }
+        h1 { font-size: 2.3rem; }
+        h2 { font-size: 1.7rem; }
+        h3 { font-size: 1.25rem; font-weight: 600; }
 
-        /* Bio */
-        #bio { text-align: center; }
-        #bio img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary); box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 1rem; }
-        #bio p { margin-bottom: 0.75rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
-        #bio .social { margin-top: 1rem; }
-        .social a { margin: 0 0.5rem; font-size: 1.5rem; color: var(--secondary); transition: var(--transition); }
-        .social a:hover { color: var(--primary); }
+        #bio { text-align: center; background: transparent; box-shadow: none; scroll-margin-top: 0px;}
+        #bio img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 6px 24px rgba(59,130,246,0.10);
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+        #bio img:hover { transform: scale(1.04) rotate(-2deg);}
+        #bio p { margin-bottom: 0.75rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        #bio .social { margin-top: 1.2rem; }
+        .social a {
+            margin: 0 0.6rem;
+            font-size: 1.7rem;
+            color: var(--secondary);
+            transition: color 0.2s, transform 0.2s;
+            vertical-align: middle;
+        }
+        .social a:hover {
+            color: var(--primary);
+            transform: translateY(-2px) scale(1.15);
+        }
 
-        /* Projects */
-        #projects .project { background: var(--card-bg); padding: 2rem; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; }
-        .project h3 { margin-bottom: 0.5rem; font-size: 1.5rem; }
+        ul { margin: 1rem 0 0 0; padding: 0; }
+        ul li {
+            margin-bottom: 0.5rem;
+            font-size: 1.07rem;
+            list-style: none;
+        }
+
+        #projects .project {
+            background: var(--card-bg);
+            padding: 2rem 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2.5rem;
+            transition: box-shadow 0.2s;
+        }
+        #projects .project:hover {
+            box-shadow: 0 12px 32px rgba(59,130,246,0.13), 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .project h3 { margin-bottom: 0.5rem; font-size: 1.35rem; }
         .project .summary { margin: 1rem 0; color: var(--text); }
-        .project .links h4 { margin-bottom: 0.5rem; color: var(--secondary); }
-        .project .links a { display: inline-block; margin-right: 1rem; text-decoration: none; font-weight: 500; color: var(--primary); }
-        .project .links a:hover { text-decoration: underline; }
+        .project .links h4 { margin-bottom: 0.5rem; color: var(--secondary); font-size: 1.07rem;}
+        .project .links a {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-bottom: 0.3rem;
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--primary);
+            border-bottom: 1.5px solid transparent;
+            transition: border 0.2s, color 0.2s;
+        }
+        .project .links a:hover {
+            border-bottom: 1.5px solid var(--primary);
+            color: #2563eb;
+        }
+        .project img, .project iframe {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 1rem auto;
+            border-radius: var(--radius);
+            box-shadow: 0 2px 12px rgba(59,130,246,0.08);
+        }
 
-        /* Teaching */
-        #teaching .card { background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 1.5rem; }
+        #teaching .card {
+            background: var(--card-bg);
+            padding: 1.5rem 1.2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+        #teaching .card:hover {
+            box-shadow: 0 8px 24px rgba(59,130,246,0.10), 0 2px 8px rgba(0,0,0,0.05);
+        }
         #teaching h3 { margin-bottom: 0.5rem; }
 
-        /* CV */
-        #cv iframe { width: 100%; height: 600px; border: none; border-radius: var(--radius); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; color: var(--text); }
+        #cv iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 1rem;
+            background: #f4f8ff;
+        }
+        #cv a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px solid var(--primary);
+            transition: color 0.2s;
+        }
+        #cv a:hover { color: #2563eb; }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 1rem 0;
+            font-size: 0.97rem;
+            color: var(--text);
+            background: transparent;
+            margin-top: 2rem;
+            letter-spacing: 0.01em;
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--primary);
+            transition: color 0.2s;
+        }
+        footer a:hover { color: #2563eb; }
+
+        @media (max-width: 700px) {
+            main { padding-top: 80px; }
+            section { padding: 1.2rem 0.5rem; }
+            #projects .project, #teaching .card { padding: 1rem 0.5rem; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            nav { gap: 1rem; }
+            #bio img { width: 110px; height: 110px; }
+            #cv iframe { height: 350px; }
+        }
     </style>
 </head>
 <body>
@@ -96,7 +255,7 @@
                 <p class="summary">The UK's first national AI healthcare model, a generative auto-regressive transformer model trained from scratch on 50+ million de-identified coded NHS England patient records. As a general-purpose medical event prediction model, Foresight supports zero-shot predictions across a broad spectrum of medical events, including COVID-19, enabling scalable, data-driven clinical insights.</p>
                 <img src="media/foresight/fig_model_inference.png" alt="Foresight Model Inference" style="display:block;max-width:100%;height:auto;margin:1rem auto;">
                 <div class="links">
-                    <h4>Teaching</h4>
+                    <h4>Presentations</h4>
                     <p>UK Generative AI Hub Launch: <a href="media/foresight/GenAIPoster.pdf" target="_blank">Poster</a>
                     <p>3 minute thesis (Departmental Prize)<a href="media/foresight/3_minute_thesis.pdf" target="_blank">Poster</a></p>
 
@@ -126,7 +285,7 @@
                         <a href="https://arxiv.org/abs/2305.13395" target="_blank">Extended Abstract</a>
                         <a href="media/discharge_summaries/AAAI_2024_Spring_Symposium_Poster.pdf" target="_blank">Poster</a>
                     </p>
-                    <h4>Teaching</h4>
+                    <h4>Presentations</h4>
                     <p>Healtac 2024: <a href="media/discharge_summaries/Simon_Ellershaw_Discharge_Summaries_Healtac.pdf" target="_blank">Slides</a>
                     <p>Manchester University /UCL MSC Health Informatics Guest Lecture: <a href="media/discharge_summaries/Discharge_Summaries_Manchester_2025.pdf" target="_blank">Slides</a>   
                     </p>
@@ -191,7 +350,6 @@
         <!-- CV Section -->
         <section id="cv">
             <h2>Curriculum Vitae</h2>
-            <p><a href="media/Simon_Ellershaw_CV.pdf" target="_blank" style="color: var(--primary); font-weight: 600;">Download my CV (PDF)</a></p>
             <iframe src="media/Simon_Ellershaw_CV.pdf"></iframe>
         </section>
     </main>
