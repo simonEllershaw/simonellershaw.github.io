@@ -146,7 +146,7 @@
             list-style: none;
         }
 
-        #projects .project, #teaching .card {
+        #projects .project, #presentations .card {
             background: var(--card-bg);
             padding: 2rem 1.5rem;
             border-radius: var(--radius);
@@ -154,7 +154,7 @@
             margin-bottom: 2.5rem;
             transition: box-shadow 0.25s, transform 0.25s;
         }
-        #projects .project:hover, #teaching .card:hover {
+        #projects .project:hover, #presentations .card:hover {
             box-shadow: 0 20px 48px rgba(59,130,246,0.15), 0 4px 16px rgba(0,0,0,0.07);
             transform: translateY(-4px) scale(1.012);
         }
@@ -229,7 +229,7 @@
         @media (max-width: 700px) {
             main { padding-top: 80px; }
             section { padding: 1.2rem 0.5rem; }
-            #projects .project, #teaching .card { padding: 1rem 0.5rem; }
+            #projects .project, #presentations .card { padding: 1rem 0.5rem; }
             h1 { font-size: 1.6rem; }
             h2 { font-size: 1.25rem; }
             nav { gap: 0.7rem; }
@@ -243,7 +243,7 @@
         <nav>
             <a href="#bio" class="active">Bio</a>
             <a href="#projects">Recent Projects</a>
-            <a href="#teaching">Teaching</a>
+            <a href="#presentations">Presentations</a>
             <a href="#cv">CV</a>
         </nav>
     </header>
@@ -278,10 +278,6 @@
                 <p class="summary">The UK's first national AI healthcare model, a generative auto-regressive transformer model trained from scratch on 50+ million de-identified coded NHS England patient records. As a general-purpose medical event prediction model, Foresight supports zero-shot predictions across a broad spectrum of medical events, including COVID-19, enabling scalable, data-driven clinical insights.</p>
                 <img src="media/foresight/fig_model_inference.png" alt="Foresight Model Inference" style="display:block;max-width:100%;height:auto;margin:1rem auto;">
                 <div class="links">
-                    <h4>Presentations</h4>
-                    <p>UK Generative AI Hub Launch <a href="media/foresight/GenAIPoster.pdf" target="_blank">[Poster]</a>
-                    <p>3 minute thesis (Departmental Prize) <a href="media/foresight/3_minute_thesis.pdf" target="_blank">[Slides]</a></p>
-
                     <h4>Press</h4>
                     <a href="https://www.nature.com/articles/d41586-025-01422-3" target="_blank">Nature</a>
                     <a href="https://www.bbc.co.uk/sounds/play/m002bt8r" target="_blank">BBC Radio</a>
@@ -295,6 +291,10 @@
                     <a href="" target="https://www.linkedin.com/posts/ethan-goh_generativeai-healthai-clinicalai-activity-7326307005827063809-0IcE?utm_source=share&utm_medium=member_desktop&rcm=ACoAACUPG48BWD2sZdXUZQamwZT6U9Op8XTvVIc">The UK just trained a generative AI on health records from 57 million patients</a>
                     <a href="https://rundatarun.io/p/foresight-ai-the-uks-bold-gamble?r=22hmjv&utm_campaign=post&utm_medium=web&triedRedirect=true" target="_blank">Foresight AI: The UK's Bold Gamble on Predictive Healthcare</a>
                     <a href="https://priteshmistry.ghost.io/ai-at-scale-but-why-arent-we-celebrating/" target="_blank">AI at Scale, Made with the NHS…but Why Aren't We Celebrating?</a>
+                
+                    <h4>Presentations</h4>
+                    <p>UK Generative AI Hub Launch <a href="media/foresight/GenAIPoster.pdf" target="_blank">[Poster]</a>
+                    <p>3 minute thesis (Departmental Prize) <a href="media/foresight/3_minute_thesis.pdf" target="_blank">[Slides]</a></p>
                 </div>
             </div>
 
@@ -366,13 +366,25 @@
 
         </section>
 
-        <!-- Teaching Section -->
-        <section id="teaching">
-            <h2>Teaching</h2>
+        <!-- Presentations Section -->
+        <section id="presentations">
+            <h2>Presentations</h2>
+            
+            <div class="card">
+                <h3>Generative AI in the NHS</h3>
+                <p>MSD Pharmaceuticals <a href="media/presentations/MSD Presentation.pdf" target="_blank">[2025 Slides]</a></p>
+            </div>
 
             <div class="card">
-                <h3>Artificial Intelligence in Healthcare SSC (1st Year UCL Medical Students)</h3>
-                <p>Introduction to Large Language Models <a href="media/teaching/MedicSSC.pdf" target="_blank">Slides</a></p>
+                <h3>Introduction to Large Language Models</h3>
+
+                <p>1st Year UCL Medicine: Artificial Intelligence in Healthcare Student Selected Component <a href="media/presentations/MedicSSC.pdf" target="_blank">[2025 Slides]</a></p>
+            </div>
+
+            <div class="card">
+                <h3>AI in Healthcare: Is it all hype?</h3>
+                <p>Ulfasa Meeting on Education and Leadership in Palliative Care at Emmanuel College Cambridge
+                <a href="media/presentations/Cambridge Presentation.pdf" target="_blank">[2024 Slides]</a></p>
             </div>
         </section>
 
